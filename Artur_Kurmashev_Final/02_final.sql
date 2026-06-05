@@ -2,7 +2,7 @@
 CREATE SCHEMA IF NOT EXISTS store;
 SET search_path TO store;
 
--- 2. DDL: Создание таблиц (теперь их 7)
+-- 2. DDL: Создание таблиц
 CREATE TABLE IF NOT EXISTS developers (
     dev_id SERIAL PRIMARY KEY,
     dev_name VARCHAR(100) NOT NULL,
@@ -76,7 +76,7 @@ BEGIN
     END IF;
 END $$;
 
--- Очистка перед вставкой (без DROP)
+-- Очистка перед вставкой 
 TRUNCATE developers, genres, games, game_genres, users, purchases, reviews RESTART IDENTITY CASCADE;
 
 -- 4. DML: Вставка данных
